@@ -1,5 +1,5 @@
-# Menu digital para resturantes e bares
-O sismea consite em um cardápio onde o usuário pode escolhar, adicionar observações e enviar o pedido diretamente para a cozinha, sem serviços de terceiros.
+# Menu digital para restaurantes e bares
+O sistema consiste em um cardápio onde o usuário pode escolher, adicionar observações e enviar o pedido diretamente para a cozinha, sem serviços de terceiros.
 
 ## Como funciona?
 O cliente faz o pedido, o pedido chega até a cozinha e o chefe informa se o pedido está em espera, produção ou pronto.
