@@ -30,7 +30,7 @@ VALUES(1,'AC01');
 
 #Tabela principal de pedidos
 CREATE TABLE pedido(
-    mesa_ID INT,
+    mesa_ID INT NOT NULL,
     pedido_ID INT AUTO_INCREMENT PRIMARY KEY,
     situacao ENUM('EM_ESPERA', 'EM_PREPARO', 'PRONTO', 'ENTREGUE'),
     data_hora DATETIME DEFAULT CURRENT_TIMESTAMP,
