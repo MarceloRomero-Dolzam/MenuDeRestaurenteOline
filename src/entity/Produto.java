@@ -9,9 +9,7 @@ public class Produto {
     private String categoria;
     private boolean disponivel;
 
-    public Produto(){
-
-    }
+    public Produto(){}
 
     public Produto(int produtoId, String nome, String descricaoDoProduto, double preco, String categoria, boolean disponivel){
         this.produtoId = produtoId;
