@@ -7,9 +7,9 @@ import java.sql.SQLException;
 //conexão estática.
 public class Conexao {
     
-    private static final String url = "jdbc:mysql://localhost:3306/bancoDeDados";
+    private static final String url = "jdbc:mysql://localhost:3306/restauranteDB";
     private static final String user = "root";
-    private static final String password = "4410";
+    private static final String password = "";
 
     private static Connection conn;
 

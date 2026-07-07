@@ -1,0 +1,9 @@
+/*
+Adiciona ao projeto qualquer arquivo .jar encontrado dentro da pasta lib.
+Adicionei este json para corrigir o erro de conecção do banco de dados.s
+*/
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar"
+    ]
+}
