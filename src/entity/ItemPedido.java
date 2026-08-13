@@ -1,9 +1,9 @@
 package entity;
 
 public class ItemPedido {
-    private int itemPedidoId;
-    private int pedidoId;
-    private int produtoId;
+    private int item_pedido_id;
+    private int pedido_id;
+    private int produto_id;
     private int quantidade;
     private String observacao;
 
@@ -11,24 +11,24 @@ public class ItemPedido {
 
     public ItemPedido(int itemPedidoId, int pedidoId, int produtoId, int quantidade, String observacao){
 
-        this.itemPedidoId = itemPedidoId;
-        this.pedidoId = pedidoId;
-        this.produtoId = produtoId;
+        this.item_pedido_id = itemPedidoId;
+        this.pedido_id = pedidoId;
+        this.produto_id = produtoId;
         this.quantidade = quantidade;
         this.observacao = observacao;
 
     }
 
     public int getItemPedidoId(){
-        return itemPedidoId;
+        return item_pedido_id;
     }
 
     public int getPedidoId(){
-        return pedidoId;
+        return pedido_id;
     }
 
     public int getProdutoId(){
-        return produtoId;
+        return produto_id;
     }
 
     public int getQuantidade(){

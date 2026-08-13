@@ -2,9 +2,9 @@ package entity;
 
 public class Produto {
     
-    private int produtoId;
-    private String nome;
-    private String descricaoDoProduto;
+    private int produto_id;
+    private String nome_do_produto;
+    private String descricao_do_produto;
     private double preco;
     private String categoria;
     private boolean disponivel;
@@ -12,37 +12,37 @@ public class Produto {
     public Produto(){}
 
     public Produto(int produtoId, String nome, String descricaoDoProduto, double preco, String categoria, boolean disponivel){
-        this.produtoId = produtoId;
-        this.nome = nome;
-        this.descricaoDoProduto = descricaoDoProduto;
+        this.produto_id = produtoId;
+        this.nome_do_produto = nome;
+        this.descricao_do_produto = descricaoDoProduto;
         this.preco = preco;
         this.categoria = categoria;
         this.disponivel = disponivel;
     }
 
     public int getProdutoId(){
-        return produtoId;
+        return produto_id;
     }
 
     public void setProdutoId(int produtoId){
         //O this recebe a propriedade desse objeto e essa propriedade recebe o valor vindo do parâmetro.
-        this.produtoId = produtoId;
+        this.produto_id = produtoId;
     }
 
     public String getNome(){
-        return nome;
+        return nome_do_produto;
     }
 
     public void setNome(String nome){
-        this.nome = nome;
+        this.nome_do_produto = nome;
     }
 
     public String getDescricaoDoProduto(){
-        return descricaoDoProduto;
+        return descricao_do_produto;
     }
 
     public void setDescricaoDoProduto(String descricaoDoProduto){
-        this.descricaoDoProduto = descricaoDoProduto;
+        this.descricao_do_produto = descricaoDoProduto;
     }
 
     public double preco(){

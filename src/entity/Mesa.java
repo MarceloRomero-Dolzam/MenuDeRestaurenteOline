@@ -2,40 +2,40 @@ package entity;
 
 public class Mesa {
     
-    private int mesaId;
-    private int numMesa;
-    private String senhaMesa;
+    private int mesa_id;
+    private int numero_da_mesa;
+    private String senha_da_mesa;
 
     public Mesa(){}
 
     public Mesa(int mesaId, int numMesa, String senhaMesa){
-        this.mesaId = mesaId;
-        this.numMesa = numMesa;
-        this.senhaMesa = senhaMesa;
+        this.mesa_id = mesaId;
+        this.numero_da_mesa = numMesa;
+        this.senha_da_mesa = senhaMesa;
     }
 
     public int getMesaId(){
-        return mesaId;
+        return mesa_id;
     }
 
     public void setMesaId(int mesaId){
-        this.mesaId = mesaId;
+        this.mesa_id = mesaId;
     }
 
     public int getNumMesa(){
-        return numMesa;
+        return numero_da_mesa;
     }
 
     public void setNumMesa(int numMesa){
-        this.numMesa = numMesa;
+        this.numero_da_mesa = numMesa;
     }
 
     public String senhaMesa(){
-        return senhaMesa;
+        return senha_da_mesa;
     } 
 
     public void senhaMesa(String senhaMesa){
-        this.senhaMesa = senhaMesa;
+        this.senha_da_mesa = senhaMesa;
     }
 
 

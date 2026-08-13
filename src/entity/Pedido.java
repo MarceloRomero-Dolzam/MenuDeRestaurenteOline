@@ -7,38 +7,39 @@ public class Pedido {
     public enum Situacao{
         EM_ESPERA, 
         EM_PREPARO, 
-        PRONTO, 
+        PRONTO,
+        SAIU_PARA_ENTREGA,
         ENTREGUE
     }
     
-    private int pedidoId;
-    private int mesaId;
+    private int pedido_id;
+    private int mesa_id;
     private Situacao situacao;
-    private LocalDateTime dataHora;
-    private double valor;
+    private LocalDateTime data_hora;
+    private double total;
 
     public Pedido(){}
 
     public Pedido(int pedidoId,int mesaId, double valor){
 
-        this.pedidoId = pedidoId;
-        this.mesaId = mesaId;
+        this.pedido_id = pedidoId;
+        this.mesa_id = mesaId;
         this.situacao = Situacao.EM_ESPERA;
-        this.dataHora = LocalDateTime.now();
-        this.valor = valor;
+        this.data_hora = LocalDateTime.now();
+        this.total = valor;
 
     }
 
     public int getPedidoId(){
-        return pedidoId;
+        return pedido_id;
     }
 
     public int getMesaId(){
-        return mesaId;
+        return mesa_id;
     }
     
     public void setMesaId(int mesaId){
-        this.mesaId = mesaId;
+        this.mesa_id = mesaId;
     }
 
     public Situacao getSituacao(){
@@ -50,14 +51,14 @@ public class Pedido {
     }
 
     public LocalDateTime getDataHora(){
-        return dataHora;
+        return data_hora;
     }
 
     public double getValor(){
-        return valor;
+        return total;
     }
 
     public void setValor(double valor){
-        this.valor = valor;
+        this.total = valor;
     }
 }
