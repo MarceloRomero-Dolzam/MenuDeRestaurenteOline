@@ -24,11 +24,6 @@ public class Produto {
         return produto_id;
     }
 
-    public void setProdutoId(int produtoId){
-        //O this recebe a propriedade desse objeto e essa propriedade recebe o valor vindo do parâmetro.
-        this.produto_id = produtoId;
-    }
-
     public String getNome(){
         return nome_do_produto;
     }
@@ -45,11 +40,11 @@ public class Produto {
         this.descricao_do_produto = descricaoDoProduto;
     }
 
-    public double preco(){
+    public double getPreco(){
         return preco;
     }
 
-    public void preco(double preco){
+    public void setPreco(double preco){
         this.preco = preco;
     }
 
@@ -65,7 +60,7 @@ public class Produto {
         return disponivel;
     }
 
-    public void disponivel(boolean disponivel){
+    public void setDisponivel(boolean disponivel){
         this.disponivel = disponivel;
     }
 
