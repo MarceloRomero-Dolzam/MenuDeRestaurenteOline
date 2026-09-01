@@ -1,4 +1,5 @@
 package controller;
+import java.util.List;
 import java.util.Scanner;
 import DataAcessObject.*;
 import entity.*;
@@ -14,7 +15,8 @@ public class Menu {
             boolean inserido = false;
 
             System.out.println("================MENU================");
-            System.out.println("1. Inserir novo item no cardápio");
+            System.out.println("1. Inserir novo item no cardápio.");
+            System.out.println("2. Mostrar os intens no cardápio.");
             System.out.println("=====================================");
             System.out.print("Escolha sua opção: ");
             menu = scanner.nextInt();
@@ -105,6 +107,23 @@ public class Menu {
                     else{
                         System.out.println("Erro ao inserir o produto!");
                     }
+
+                    break;
+
+                    case 2:
+
+                        List<Produto> produtos = produtoDAO.listarProduto();
+
+                        System.out.println("\n========== CARDÁPIO ==========");
+
+                        for (Produto p : produtos) {
+                            System.out.println("Nome: " + p.getNome());
+                            System.out.println("Descrição: " + p.getDescricaoDoProduto());
+                            System.out.println("Preço: R$ " + p.getPreco());
+                            System.out.println("Categoria: " + p.getCategoria());
+                            System.out.println("Disponível: " + p.getDisponivel());
+                            System.out.println("-------------------------------");
+                        }
 
                     break;
             

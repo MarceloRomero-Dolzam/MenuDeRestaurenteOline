@@ -2,7 +2,10 @@ package DataAcessObject;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import entity.Produto;
 import conexao.Conexao;
@@ -32,4 +35,30 @@ public class ProdutoDAO {
         }
 
     }
+
+    public List<Produto> listarProduto(){
+        String sql = "select * from produto";
+        List<Produto> lista = new ArrayList<>();
+
+         try{
+            Connection conn = Conexao.getConecction();
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            ResultSet result = stmt.executeQuery();
+
+            while(result.next()){
+                Produto produto = new Produto();
+                produto.setNome(result.getString("nome_do_produto"));
+                produto.setDescricaoDoProduto(result.getString("descricao_do_produto"));
+                produto.setPreco(result.getDouble("preco"));
+                produto.setCategoria(result.getString("categoria"));
+                produto.setDisponivel(result.getBoolean("disponivel"));
+                lista.add(produto);
+            }
+            
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return lista;
+    }
+
 }
