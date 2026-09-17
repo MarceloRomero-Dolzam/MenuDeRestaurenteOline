@@ -4,7 +4,7 @@ import java.util.Scanner;
 import DataAcessObject.*;
 import entity.*;
 
-public class Menu {
+public class MenuProduto {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
         int menu = 0;
@@ -15,8 +15,10 @@ public class Menu {
             boolean inserido = false;
 
             System.out.println("================MENU================");
-            System.out.println("1. Inserir novo item no cardápio.");
-            System.out.println("2. Mostrar os intens no cardápio.");
+            System.out.println("1. Inserir novo produto no cardápio.");
+            System.out.println("2. Mostrar os produtos no cardápio.");
+            System.out.println("3. Atualziar produto.");
+            System.out.println("4. Deletar produto");
             System.out.println("=====================================");
             System.out.print("Escolha sua opção: ");
             menu = scanner.nextInt();
@@ -114,18 +116,25 @@ public class Menu {
 
                         List<Produto> produtos = produtoDAO.listarProduto();
 
-                        System.out.println("\n========== CARDÁPIO ==========");
-
-                        for (Produto p : produtos) {
-                            System.out.println("Nome: " + p.getNome());
-                            System.out.println("Descrição: " + p.getDescricaoDoProduto());
-                            System.out.println("Preço: R$ " + p.getPreco());
-                            System.out.println("Categoria: " + p.getCategoria());
-                            System.out.println("Disponível: " + p.getDisponivel());
-                            System.out.println("-------------------------------");
+                        System.out.println("====================CARDÁPIO====================");
+                        for(Produto p : produtos){
+                            System.out.println("Nome: "+p.getNome());
+                            System.out.println("Descrição: "+p.getDescricaoDoProduto());
+                            System.out.println("Preço: "+p.getPreco());
+                            System.out.println("Categoria: "+p.getCategoria());
+                            System.out.println("Dispobivel: "+p.getDisponivel());
+                            System.out.println("--------------------------------------------------");
                         }
 
-                    break;
+                        break;
+
+                    case 3:
+                        //update
+                        break;
+
+                    case 4:
+                        //delete
+                        break;
             
                 default:
                     System.out.println("Opção inválida");
