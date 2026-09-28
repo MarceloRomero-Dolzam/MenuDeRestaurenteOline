@@ -4,7 +4,7 @@ import java.util.Scanner;
 import DataAcessObject.*;
 import entity.*;
 
-public class MenuProduto {
+public class Teste {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
         int menu = 0;
@@ -129,7 +129,55 @@ public class MenuProduto {
                         break;
 
                     case 3:
-                        //update
+
+                        produtos = produtoDAO.listarProduto();
+                        
+                        System.out.println("====================Produtos====================");
+                        for(Produto p : produtos){
+                            System.out.println("ID: "+p.getProdutoId());
+                            System.out.println("Nome: "+p.getNome());
+                            System.out.println("Descrição: "+p.getDescricaoDoProduto());
+                            System.out.println("Preço: "+p.getPreco());
+                            System.out.println("Categoria: "+p.getCategoria());
+                            System.out.println("Dispobivel: "+p.getDisponivel());
+                            System.out.println("--------------------------------------------------");
+                        }
+                        
+                        System.out.println("Para sair digite SAIR em maiúsculo.");
+                        System.out.print("Digite o ID do produto que deseja alterar: ");
+                        String procurarPeloProduto = scanner.nextLine().trim();
+
+                        while (!procurarPeloProduto.equals("SAIR")){
+                            boolean encontrado = false;
+                            int procurarPeloId = 0;
+
+                            try {
+                                procurarPeloId = Integer.parseInt(procurarPeloProduto);
+
+                                for(Produto p: produtos){
+                                    if(procurarPeloId == p.getProdutoId()){
+                                        encontrado = true;
+                                        break;
+                                    }
+                                }
+                                
+                            } catch (NumberFormatException e) {
+                                System.out.println("Digite apenas número!");
+                            }
+
+                            if(encontrado){
+                                for(Produto p: produtos){
+                                    if(procurarPeloId == p.getProdutoId()){
+                                        System.out.println("ID: "+p.getProdutoId());
+                                        System.out.println("Nome: "+p.getNome());
+                                    }
+                                }
+
+                                System.out.print("Deseja editar este item: ");
+                                procurarPeloProduto = scanner.nextLine();
+                            }
+                        }
+                        
                         break;
 
                     case 4:

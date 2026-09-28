@@ -1,6 +1,6 @@
 import java.sql.Connection;
 import conexao.Conexao;
-import controller.MenuProduto;
+import controller.Teste;
 
 public class Main {
 
@@ -11,7 +11,7 @@ public class Main {
 
         if (conexao != null) {
             System.out.println("Conexão realizada com sucesso!");
-            MenuProduto.main(args);
+            Teste.main(args);
         } else {
             System.out.println("Erro ao conectar ao banco de dados.");
         }

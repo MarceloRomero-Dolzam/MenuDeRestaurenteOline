@@ -18,9 +18,8 @@ public class ProdutoDAO {
         +"(nome_do_produto, descricao_do_produto, preco, categoria, disponivel)"
         +"VALUES (?, ?, ?, ?, ?)";
 
-        try{
-            Connection conn = Conexao.getConecction();
-            PreparedStatement stmt = conn.prepareStatement(sql);
+        try(Connection conn = Conexao.getConecction();
+            PreparedStatement stmt = conn.prepareStatement(sql);){
 
             stmt.setString(1, produto.getNome());
             stmt.setString(2, produto.getDescricaoDoProduto());
@@ -42,12 +41,10 @@ public class ProdutoDAO {
         String sql = "select * from produto";
         List<Produto> lista = new ArrayList<>();
 
-        try{
-            Connection conn = Conexao.getConecction();
+        try(Connection conn = Conexao.getConecction();
             PreparedStatement stmt = conn.prepareStatement(sql);
-            ResultSet result = stmt.executeQuery();
+            ResultSet result = stmt.executeQuery();){
             
-
             while(result.next()){
                 int idProduto = result.getInt("produto_id");
 
@@ -75,10 +72,9 @@ public class ProdutoDAO {
 
         String sql = "update produto set nome_do_produto = ?, descricao_do_produto = ?, preco = ?, categoria = ?, disponivel = ? where produto_id = ?";
 
-        try{
-            Connection conn = Conexao.getConecction();
-            PreparedStatement stmt = conn.prepareStatement(sql);
-
+        try(Connection conn = Conexao.getConecction();
+            PreparedStatement stmt = conn.prepareStatement(sql);){
+            
             stmt.setString(1, produto.getNome());
             stmt.setString(2, produto.getDescricaoDoProduto());
             stmt.setDouble(3, produto.getPreco());
@@ -87,9 +83,8 @@ public class ProdutoDAO {
             stmt.setInt(6, produto.getProdutoId());
 
             int linhasAfetadas = stmt.executeUpdate();
-            System.out.println("Linhas modificadas: "+ linhasAfetadas);
 
-            return true;
+            return linhasAfetadas > 0;
 
         }catch(SQLException e){
             e.printStackTrace();
@@ -102,15 +97,14 @@ public class ProdutoDAO {
     public boolean removerProduto(int produto_id){
         String sql = "delete from produto where produto_id = ?";
 
-        try {
-            Connection conn = Conexao.getConecction();
-            PreparedStatement stmt = conn.prepareStatement(sql);
-
+        try(Connection conn = Conexao.getConecction();
+            PreparedStatement stmt = conn.prepareStatement(sql);){
+            
             stmt.setInt(1, produto_id);
             int linhasAfetadas = stmt.executeUpdate();
 
             return linhasAfetadas > 0;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
             return false;
         }
